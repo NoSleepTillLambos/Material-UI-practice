@@ -1,6 +1,7 @@
 import './App.css';
 import TourCard from './components/TourCard';
 import { Container, Grid } from '@mui/material';
+import React, { Component }  from 'react';
 
 function App() {
   return (
