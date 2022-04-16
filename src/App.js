@@ -1,25 +1,21 @@
 import './App.css';
-import TourCard from './components/TourCard';
-import { Container, Grid } from '@mui/material';
+import Home from './pages/Home';
 import React from 'react';
+import {BrowserRouter, Routes, Route } from 'react-router-dom';
 import SearchAppBar from './components/AppBar';
+import Tour from './pages/Tour'
+
 
 function App() {
   return (
-    <div className="App">
-      <SearchAppBar/>
-        <Container sx={{marginY: 5}}>
-        <Grid container spacing={3}>
-        <TourCard/>
-        <TourCard/>
-        <TourCard/>
-        <TourCard/>
-        </Grid >
-
-        </Container>
+    <BrowserRouter>
+    <SearchAppBar/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/:id' element={<Tour/>}/>
+      </Routes>
+    </BrowserRouter>
       
-      
-    </div>
   );
 }
 

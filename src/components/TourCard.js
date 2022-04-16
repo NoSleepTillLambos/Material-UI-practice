@@ -30,16 +30,16 @@ const theme = createTheme({
     }
 })
 
-function TourCard() {
+function TourCard({tour}) {
   return (
     
     <Grid item xs={3}>
         <Paper elevation={4}>
-            <img id='image'  src='https://cdn.vox-cdn.com/thumbor/PgamW7529c37VWzBUmfDedzevOQ=/0x0:4775x3091/1220x813/filters:focal(2006x1164:2770x1928):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/69239730/1303177487.0.jpg'></img>
+            <img id='image'  src={tour.image}></img>
             
             <Box paddingX={0.5} >
                 <Typography variant='subtitle1' component="h2">
-                Liverpool
+                    {tour.name}
                 </Typography>
 
                 <Box 
@@ -49,7 +49,7 @@ function TourCard() {
                 }}>
                     <AccessTime sx={{width: 12.5}}></AccessTime>
                     <Typography variant='body2' component="p" marginLeft={0.5}>
-                        5 Hours
+                        {tour.duration}
                     </Typography>
                 </Box>
                 <Box
@@ -65,15 +65,15 @@ function TourCard() {
                     readOnly/>
 
                     <Typography variant='body2' component="p" marginLeft={0.2}>
-                        4.5
+                        {tour.rating}
                     </Typography>
                     <Typography variant='p' component="p" marginLeft={1}>
-                        (655 views)
+                        {tour.numberOfReviews}
                     </Typography>
                 </Box>
                 <Box>
                     <Typography variant='p' component="p" marginTop={0}>
-                        From $600
+                        {tour.price}
                     </Typography>
                 </Box>
             </Box>
