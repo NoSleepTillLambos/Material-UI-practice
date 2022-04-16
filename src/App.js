@@ -1,19 +1,23 @@
 import './App.css';
 import TourCard from './components/TourCard';
 import { Container, Grid } from '@mui/material';
-import React, { Component }  from 'react';
+import React from 'react';
+import SearchAppBar from './components/AppBar';
 
 function App() {
   return (
     <div className="App">
-      <Container maxWidth="sm">
+      <SearchAppBar/>
+        <Container sx={{marginY: 5}}>
         <Grid container spacing={3}>
         <TourCard/>
         <TourCard/>
         <TourCard/>
         <TourCard/>
         </Grid >
-      </Container>
+
+        </Container>
+      
       
     </div>
   );
